@@ -19,11 +19,28 @@ public class Act_Stream {
         fis.close();
     }
 
-//    public static void guardarNota (String nota) {
-//        System.out.println("guardar Nota");
-//    }
-//
-//    public static String leerNotas() {
-//        return "notas";
-//    }
+    // Guardar una nota agregando salto de línea
+    public static void guardarNota(String nota) throws IOException {
+        OutputStream fos = new FileOutputStream("notas.txt", true);
+        byte[] datos = (nota + "\n").getBytes();
+        fos.write(datos);
+        fos.flush();
+        fos.close();
+    }
+
+    // Leer todas las notas del archivo y devolverlas como texto
+    public static String leerNotas() throws IOException {
+        File archivo = new File("notas.txt");
+        if (!archivo.exists()) {
+            return "";
+        }
+        InputStream fis = new FileInputStream(archivo);
+        StringBuilder sb = new StringBuilder();
+        int byteFile;
+        while ((byteFile = fis.read()) != -1) {
+            sb.append((char) byteFile);
+        }
+        fis.close();
+        return sb.toString();
+    }
 }
