@@ -11,11 +11,6 @@ public class terminal {
 
     public static void main(String[] args) {
         System.out.println("=== BIENVENIDO AL MINI-TERMINAL ===");
-        System.out.println("Comandos disponibles:");
-        System.out.println(" - sumar [num1] [num2]");
-        System.out.println(" - invertir [texto]");
-        System.out.println(" - mayusculas [texto]");
-        System.out.println(" - salir");
         System.out.println("===================================");
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
