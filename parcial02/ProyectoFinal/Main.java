@@ -1,6 +1,5 @@
-package parcial02.practica05;
+package parcial02.ProyectoFinal;
 
-import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -49,7 +48,8 @@ public class Main {
         int id = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Nombre: ");
         String name = scanner.nextLine().trim();
-
+        int age = Integer.parseInt(scanner.nextLine().trim());
+        String mail = scanner.nextLine().trim();
 
         alumnos.add(new Alumno(id, name, age, mail));
     }

@@ -1,4 +1,4 @@
-package parcial02.practica05;
+package parcial02.ProyectoFinal;
 
 public class Alumno {
     private int id;
