@@ -1,5 +1,8 @@
 package parcial02.ProyectoFinal;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,8 +27,14 @@ public class Main {
                 //case 4 -> modificarAlumno();
                 //case 5 -> eliminarAlumno();
                 //case 6 -> mostrarMenu();
+                case 7 -> guardarCSV();
+
                 case 0 -> System.out.println("Saliendo de la Base de Datos...");
                 //CRUD -> Create Read Update Delete
+
+                //Tarea
+                //Leer la base de datos
+                //case -> cargarBD();
             }
         }while (option != 0);
 
@@ -39,6 +48,22 @@ public class Main {
             } catch (NumberFormatException e){
                 System.out.println("Debe ingresar un numero valido");
             }
+        }
+    }
+
+    public  static void guardarCSV(){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))){
+            writer.write("id,nombre,edad,correo");
+            writer.newLine();
+
+            for (Alumno alumno : alumnos) {
+                writer.write(alumno.getId()+","+ alumno.getName()+","+
+                        alumno.getAge() +","+ alumno.getMail());
+                writer.newLine();
+            }
+            System.out.println("Archivo guardado!");
+        } catch (IOException e) {
+            System.out.println("Error al guardar: " + e.getMessage());
         }
     }
 
