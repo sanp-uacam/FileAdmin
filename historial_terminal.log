@@ -1,0 +1,6 @@
+[2026-10-26 08:37:31] INPUT: sumar 3 2.5
+[2026-10-26 08:37:31] OUTPUT: Resultado de la suma: 5.5
+[2026-10-26 08:37:41] INPUT: invertir sergio
+[2026-10-26 08:37:41] OUTPUT: Texto invertido: oigres
+[2026-10-26 08:37:49] INPUT: salir
+[2026-10-26 08:37:49] OUTPUT: Cerrando terminal... ¡Hasta luego!
